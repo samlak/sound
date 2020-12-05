@@ -116,13 +116,13 @@
 
          &:hover{
 
-            background: url('/asset/img/background-3.png');
+            background: url('../../../public/img/background-3.png');
 
          }
 
          @include respond(tab-port) {
              & {
-                  background: url('/asset/img/background-3.png');
+                  background: url('../../../public/img/background-3.png');
              }
          }
     }

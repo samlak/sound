@@ -1,6 +1,5 @@
 let naviToggle = document.querySelector("#navi-toggle");
 let status = true;
-let tl = gsap.timeline();
 
 window.onload = function () {
   const hero_heads = document.querySelectorAll(".hero__heading");
@@ -203,7 +202,7 @@ hero1.addEventListener("mouseleave", () => {
   logo.style.filter = "none";
 });
 hero2.addEventListener("mouseenter", () => {
-  overlay2.style.background = "url('/asset/img/background-3.png')";
+  overlay2.style.background = "url('../img/background-3.png')";
   overlay2.style.zIndex = -1;
   // overlay2.style.borderLeft = "1.5px solid gray";
   heading2.style.color = "#3C6867";
