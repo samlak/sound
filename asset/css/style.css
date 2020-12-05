@@ -226,9 +226,13 @@ body {
     font-size: 30px; }
   .hero--one {
     grid-area: menu;
-    border-right: 1.5px solid gray; }
+    border-right: 1.5px solid gray;
+    z-index: 10000; }
     .hero--one:hover {
-      background: #033C3B; }
+      background: #033C3B;
+      /* changed cursor to pointer*/
+      cursor: pointer;
+      /* changed cursor to pointer*/ }
     @media (max-width: 56.25em) {
       .hero--one {
         background: #033C3B; } }
@@ -290,3 +294,58 @@ body {
     .overlay2 {
       border-left: none;
       display: none; } }
+
+.overlay3__animate {
+  background-color: #033C3B;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 10000000;
+  animation: slide .6s .1s; }
+  @media (max-width: 56.25em) {
+    .overlay3__animate {
+      display: none; } }
+
+@keyframes slide {
+  to {
+    width: 100%; } }
+
+.overlay4__animate {
+  background: url("/asset/img/background-3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 60%;
+  z-index: 10000000000;
+  animation: slide2 .6s .1s;
+  position: absolute; }
+  @media (max-width: 56.25em) {
+    .overlay4__animate {
+      display: none; } }
+
+@keyframes slide2 {
+  to {
+    width: 100%;
+    height: 100%; } }
+
+.overlay5__animate {
+  background-color: white;
+  bottom: -2.5rem;
+  right: 0;
+  width: 49%;
+  height: 40%;
+  z-index: 10000000000;
+  animation: slide3 .6s .1s;
+  position: absolute; }
+  @media (max-width: 56.25em) {
+    .overlay5__animate {
+      display: none; } }
+
+@keyframes slide3 {
+  to {
+    width: 100%;
+    height: 109%; } }

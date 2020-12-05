@@ -64,9 +64,17 @@ window.onload = function () {
 };
 
 naviToggle.addEventListener("click", function () {
+  //fixed hover to change green color
+  const hero = document.querySelector(".hero--one");
+  //fixed hover to change green color
+
   if (status) {
     const bg = document.querySelector(".navigation__background");
     const nav = document.querySelector(".navigation__nav");
+
+    //fixed hover to change green color
+    hero.style.zIndex = "-10";
+    //fixed hover to change green color
 
     bg.style.transform = "scale(80)";
     bg.style.display = "block";
@@ -161,6 +169,10 @@ naviToggle.addEventListener("click", function () {
     nav.style.opacity = 0;
     nav.style.width = 0;
 
+    //fixed hover to change green color
+    hero.style.zIndex = "10000";
+    //fixed hover to change green color
+
     gsap.to(".first", { duration: 0, y: 0, ease: "power1" });
     gsap.to(".second", { duration: 0, y: 0, ease: "power1" });
     gsap.to(".third", { duration: 0, y: 0, ease: "power1" });
@@ -182,6 +194,31 @@ const para = document.querySelector(".hero__para");
 const footer_text = document.querySelector(".hero__footer__text");
 const footer_img = document.querySelector(".hero__footer__img");
 const logo = document.querySelector(".header__menu__logo");
+
+//This is for animating the hero section on click to navigate to the next page
+const hero3 = document.querySelector(".hero--three");
+const overlay3 = document.querySelector(".overlay3");
+const overlay4 = document.querySelector(".overlay4");
+const overlay5 = document.querySelector(".overlay5");
+hero1.onclick = function () {
+  overlay3.classList.add("overlay3__animate");
+  setTimeout(() => {
+    overlay3.classList.remove("overlay3__animate");
+  }, 700);
+};
+hero2.onclick = function () {
+  overlay4.classList.add("overlay4__animate");
+  setTimeout(() => {
+    overlay4.classList.remove("overlay4__animate");
+  }, 700);
+};
+hero3.onclick = function () {
+  overlay5.classList.add("overlay5__animate");
+  setTimeout(() => {
+    overlay5.classList.remove("overlay5__animate");
+  }, 700);
+};
+//This is for animating the hero section on click to navigate to the next page
 
 hero1.addEventListener("mouseenter", () => {
   overlay.style.background = "#033C3B";
