@@ -1,0 +1,210 @@
+.hero{
+
+     display: grid;
+     height: 88vh;
+     grid-template-areas: 'menu main'
+     'menu footer';
+
+     @include respond(tab-port) {
+         & {
+             display: flex;
+             flex-direction: column;
+
+             margin-top: 1rem;
+        
+         }
+     }
+     
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80%;
+        margin-left: 20%;
+
+         @include respond(tab-port) {
+             & {
+                 padding-top: 20rem;
+                 padding-bottom: 20rem;
+                 margin-left: 0;
+                 height: 0;
+             }
+        
+         }
+    }
+
+    &__heading{
+        font-size: 2rem;
+        color: $color-green;
+        font-weight: 900;
+         line-height: 2.0rem;
+
+         margin-left: 18%;
+
+          @include respond(tab-port) {
+              & {
+                  padding-bottom: 3rem;
+              }
+              &-1{
+
+                color: white;
+              }
+              &-2{
+
+                color: #3C6867;
+              }
+          }
+    }
+
+    &__para{
+        font-size: 2.5rem;
+        width: 70%;
+
+        line-height: 2.5rem;
+        
+        margin-left: 18%;
+
+        @include respond(tab-port) {
+            & {
+                padding-bottom: 3rem;
+            }
+            &-1{
+                color: $color-yellow;
+            }
+        }
+
+    }
+    
+        
+
+
+     &>div{
+         
+         padding: 20px 0;
+         font-size: 30px;
+    
+     }
+
+    &--one{
+        grid-area: menu;
+         border-right: 1.5px solid gray;
+
+         
+
+         &:hover{
+             background: $color-green ;
+         }
+
+         @include respond(tab-port) {
+             & {
+                 background: $color-green;
+             }
+             
+         }
+
+        
+    }
+
+    
+
+    &--two{
+         grid-area: main;
+
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+
+         &:hover{
+
+            background: url('/asset/img/background-3.png');
+
+         }
+
+         @include respond(tab-port) {
+             & {
+                  background: url('/asset/img/background-3.png');
+             }
+         }
+    }
+
+    &--three{
+         grid-area: footer;
+          border-top: 1.5px solid gray;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          @include respond(tab-port) {
+              & {
+                 border-top: none;
+              }
+          }
+    }
+
+    &__footer{
+        display: flex;
+        align-items: center;
+
+         margin-left: 10%;
+
+
+        &__text{
+            font-size: 1rem;
+            color: $color-yellow;
+            padding-left: 0.5rem;
+
+            @include respond(tab-port) {
+                &-1 {
+                    filter: sepia(100%) grayscale(100%);
+                }
+            }
+        }
+
+        &__img{
+
+            transform: scale(.5);
+
+             @include respond(tab-port) {
+                 &-1 {
+                     filter: sepia(100%) grayscale(100%);
+                 }
+             }
+        }
+    
+    }
+
+}
+
+.overlay {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 50.2%;
+    height: 10rem;
+
+    @include respond(tab-port) {
+        & {
+            display: none;
+        }
+    }
+    
+}
+.overlay2 {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 49.9%;
+    height: 10rem;
+    border-left: 1.5px solid gray;
+
+     @include respond(tab-port) {
+         & {
+           border-left:none;
+           display: none;
+         }
+     }
+    
+}
+

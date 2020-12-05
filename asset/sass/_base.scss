@@ -24,8 +24,8 @@ html {
 
 body {
     box-sizing: border-box;
-    padding: 0 15rem;
-    font-family: "Lato", sans-serif;
+    // padding: 0 15rem;
+    font-family: "Brandon Grotesque Bold";
     font-weight: 700;
 
     @include respond(tab-port) {

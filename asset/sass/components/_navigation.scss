@@ -1,0 +1,255 @@
+.navigation {
+
+    &__list:hover &__link{
+        color: rgba(255, 255, 255, 0.6)
+    }
+
+    &__list:hover &__link:hover{
+        color: $color-yellow;
+    }
+
+    padding: 0 15rem;
+
+    @include respond(tab-land) {
+        &{
+            padding: 0 5rem;
+        }
+    }
+
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        display: none;
+        position: fixed;
+        background-image: url("../img/background-2.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 3rem;
+    
+        z-index: 1000;
+        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        @include respond(tab-port) {
+            top: 4.5rem;
+            right: 4.5rem;
+            background-size: 4rem;
+        }
+
+        @include respond(phone) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 20%;
+        padding-left: 5rem;
+        z-index: 1500;
+
+        opacity: 0;
+        width: 0;
+        // transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__list {
+        position: absolute;
+        list-style: none;
+        
+    }
+
+    &__item {
+        margin: 1rem;
+        color: white;
+        
+
+    }
+    
+    &__link {
+        &:link, 
+        &:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 900;
+            color: inherit;
+            text-decoration: none;
+            line-height: 3rem;
+
+            animation-name: menuIn;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;          
+            
+            span {
+                margin-right: 1.5rem;
+                display: inline-block;
+            }
+        }
+        &__other-items{
+                opacity: .2;
+        }
+       
+
+        &__not-active {
+            opacity: 0.2;
+            color: rgba(255,255,255, 0.2) !important;
+        }
+
+        &__active {
+            color: $color-yellow;
+        }
+
+        
+    }
+
+
+
+   
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+  
+}
+
+
+.header{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    padding: 0 15rem;
+    @include respond(tab-land) {
+        & {
+            padding: 0 5rem;
+        }
+    }
+    
+
+
+     @include respond(phone) {
+         flex-direction: column;
+
+         &__consultation{
+           justify-content: flex-end;
+           margin-top: -2rem;
+             
+         }
+     }
+    
+
+
+    &__menu{
+
+          display: flex;
+          align-items: center;
+
+        &__logo {
+            height: 10rem;
+            width: 30rem;
+            @include respond(tab-port) {
+                & {
+                    padding-left: 2rem;
+                }
+            }
+        }
+
+        &__checkbox {
+            display: none;
+        }
+
+        &__button {
+            height: 7rem;
+            width: 7rem;
+            // top: 1.2rem;
+            // position: fixed;
+            z-index: 2000;
+            text-align: center;
+            cursor: pointer;
+
+           
+
+            @include respond(phone) {}
+        }
+
+        &__icon {
+            position: relative;
+            margin-top: 3.5rem;
+
+            &,
+            &::before,
+            &::after {
+                width: 3rem;
+                height: 2px;
+                background-color: gray;
+                display: inline-block;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                transition: all .2s;
+            }
+
+            &::before {
+                top: -.8rem;
+            }
+
+            &::after {
+                top: .8rem;
+            }
+        }
+
+
+          &__checkbox:checked+&__button &__icon {
+              background-color: transparent;
+          }
+
+          &__checkbox:checked+&__button &__icon::before {
+              top: 0;
+              transform: rotate(135deg);
+              background-color: white;
+          }
+
+          &__checkbox:checked+&__button &__icon::after {
+              top: 0;
+              transform: rotate(-135deg);
+              background-color: white;
+          }
+    }  
+    
+     
+
+
+    &__consultation {
+        
+        display: flex;
+        align-items: center;
+
+        @include respond(tab-port) {
+            // float: left;
+        }
+
+        &__text {
+            color: white;
+            background-color: $color-green;
+            padding: .7rem 1.7rem;
+            font-size: 1.5rem;
+            border-radius: 2rem;
+            margin-right: 2rem;
+            text-decoration: none;
+        }
+
+        &__logo {}
+    }
+}
