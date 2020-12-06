@@ -57,14 +57,12 @@
     &__list {
         position: absolute;
         list-style: none;
-        
+        font-family: "Cirka";
     }
 
     &__item {
         margin: 1rem;
         color: white;
-        
-
     }
     
     &__link {
@@ -211,22 +209,52 @@
         }
 
 
-          &__checkbox:checked+&__button &__icon {
-              background-color: transparent;
-          }
+        &__hover {
+            position: relative;
+            margin-top: 3.5rem;
 
-          &__checkbox:checked+&__button &__icon::before {
-              top: 0;
-              transform: rotate(135deg);
-              background-color: white;
-          }
+            &,
+            &::before,
+            &::after {
+                width: 3rem;
+                height: 2px;
+                background-color: white;
+                display: inline-block;
+            }
 
-          &__checkbox:checked+&__button &__icon::after {
-              top: 0;
-              transform: rotate(-135deg);
-              background-color: white;
-          }
-    }  
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                transition: all .2s;
+            }
+
+            &::before {
+                top: -.8rem;
+            }
+
+            &::after {
+                top: .8rem;
+            }
+        }
+
+        &__checkbox:checked+&__button &__icon {
+            background-color: transparent;
+        }
+
+        &__checkbox:checked+&__button &__icon::before {
+            top: 0;
+            transform: rotate(135deg);
+            background-color: white;
+        }
+
+        &__checkbox:checked+&__button &__icon::after {
+            top: 0;
+            transform: rotate(-135deg);
+            background-color: white;
+        }
+}  
     
      
 
@@ -242,6 +270,8 @@
 
         &__text {
             color: white;
+            font-family: "Brandon Grotesque Bold";
+            font-weight: bold;
             background-color: $color-green;
             padding: .7rem 1.7rem;
             font-size: 1.5rem;
@@ -250,6 +280,5 @@
             text-decoration: none;
         }
 
-        &__logo {}
     }
 }

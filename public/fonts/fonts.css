@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('./Brandon/Brandon_bld.otf');
+  src: url('./Brandon/Brandon_blk.otf');
+  src: url('./Brandon/Brandon_med.otf');
+  src: url('./Brandon/Brandon_med_it.otf');
+  src: url('./Brandon/Brandon_reg.otf');
+} 
+@font-face {
+  font-family: 'Cirka';
+  src: url('./Cirka/Cirka-Bold.otf');
+  src: url('./Cirka/Cirka-Light.otf');
+} 

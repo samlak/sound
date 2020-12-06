@@ -71,6 +71,7 @@ const indexAnimation = (gsap, document, useRouter) => {
   const footer_text = document.querySelector(".hero__footer__text");
   const footer_img = document.querySelector(".hero__footer__img");
   const logo = document.querySelector(".header__menu__logo");
+  const icon = document.querySelector(".header__menu__icon");
 
   hero1.addEventListener("mouseenter", () => {
     overlay.style.background = "#033C3B";
@@ -80,8 +81,11 @@ const indexAnimation = (gsap, document, useRouter) => {
     footer_text.style.color = "white";
     footer_img.style.filter = "sepia(100%) grayscale(100%)";
     logo.style.zIndex = 2;
-    logo.style.filter = "invert(0.35)";
+    // logo.style.filter = "invert(0.35)";
+    logo.src = "../img/logo-3.svg";
     hero1.style.zIndex = "10000";
+    icon.classList.add("header__menu__hover");
+    icon.classList.remove("header__menu__icon")
   });
   hero1.addEventListener("mouseleave", () => {
     overlay.style.background = "transparent";
@@ -91,6 +95,10 @@ const indexAnimation = (gsap, document, useRouter) => {
     footer_text.style.color = "";
     footer_img.style.filter = "none";
     logo.style.filter = "none";
+    logo.src = "../img/logo.svg";
+    hero1.style.zIndex = "0";
+    icon.classList.remove("header__menu__hover");
+    icon.classList.add("header__menu__icon");
   });
   hero2.addEventListener("mouseenter", () => {
     overlay2.style.background = "url('../img/background-3.png')";
