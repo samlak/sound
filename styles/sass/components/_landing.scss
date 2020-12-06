@@ -14,6 +14,10 @@
         
          }
      }
+
+    &__layout {
+        cursor: pointer;
+    }
      
     &__container{
         display: flex;
@@ -208,3 +212,108 @@
     
 }
 
+
+.overlay3 {
+    &__animate{
+ 
+          background-color: $color-green;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          z-index: 10000000;
+          animation: slide .6s .1s;
+ 
+ 
+          @include respond(tab-port) {
+              & {
+                 
+                  display: none;
+              }
+          }
+    }
+     
+ }
+ 
+ @keyframes slide {
+ 
+     to{
+     
+         width: 100%;
+ 
+     }
+ }
+ 
+ 
+ .overlay4 {
+    &__animate{
+ 
+         background: url('../../../public/img/background-3.png');
+         background-repeat: no-repeat;
+         background-size: cover;
+          top: 0;
+          right: 0;
+          width: 50%;
+          height: 60%;
+          z-index: 10000000000;
+          animation: slide2 .6s .1s;
+          position: absolute;
+ 
+ 
+          @include respond(tab-port) {
+              & {
+                 
+                  display: none;
+              }
+          }
+    }
+     
+ }
+ 
+ @keyframes slide2 {
+ 
+     to{
+     
+         
+         width: 100%;
+         height: 100%;
+ 
+     }
+ }
+ 
+ 
+ .overlay5 {
+    &__animate{
+ 
+         background-color: white;
+          bottom: -2.5rem;
+          right: 0;
+          width: 49%;
+          height: 40%;
+          z-index: 10000000000;
+          animation: slide3 .6s .1s;
+          position: absolute;
+ 
+ 
+          @include respond(tab-port) {
+              & {
+             
+                  display: none;
+              }
+          }
+    }
+     
+ }
+ 
+ @keyframes slide3 {
+ 
+     to{
+         
+         width: 100%;
+         height: 109%;
+ 
+     }
+ }
+ 
+ 

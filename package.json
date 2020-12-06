@@ -15,6 +15,7 @@
     "next": "10.0.3",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.6.2",
+    "next-transpile-modules": "^6.0.0",
     "nextjs-fonts": "^0.22.0",
     "node-sass": "^5.0.0",
     "react": "17.0.1",

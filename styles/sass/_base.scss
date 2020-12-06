@@ -20,12 +20,26 @@ html {
     @include respond(big-desktop) {
         font-size: 75%;
     }
+
+    @font-face {
+        font-family: 'Brandon Grotesque';
+        src: url('../../public/fonts/Brandon/Brandon_bld.otf');
+        src: url('../../public/fonts/Brandon/Brandon_blk.otf');
+        src: url('../../public/fonts/Brandon/Brandon_med.otf');
+        src: url('../../public/fonts/Brandon/Brandon_med_it.otf');
+        src: url('../../public/fonts/Brandon/Brandon_reg.otf');
+    } 
+    @font-face {
+        font-family: 'Cirka';
+        src: url('../../public/fonts/Cirka/Cirka-Bold.otf');
+        src: url('../../public/fonts/Cirka/Cirka-Light.otf');
+    } 
 }
 
 body {
     box-sizing: border-box;
     // padding: 0 15rem;
-    font-family: "Brandon Grotesque Bold";
+    font-family: "Cirka";
     font-weight: 700;
 
     @include respond(tab-port) {

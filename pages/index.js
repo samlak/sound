@@ -1,7 +1,44 @@
+import {useEffect} from 'react';
+import { useRouter } from 'next/router';
+import { gsap } from "gsap";
+
 import Header from '../components/header';
+import indexAnimation from '../gsap/index';
 import Logo2 from '../public/img/logo-2.svg';
 
-export default function Home() {
+const Home = () => {
+  useEffect(() => {
+    indexAnimation(gsap, document, useRouter);
+  }, []);
+  const router = useRouter();
+
+  const heroOne = () => {
+    const overlay3 = document.querySelector(".overlay3");
+    overlay3.classList.add("overlay3__animate");
+    setTimeout(() => {
+      router.push('/testimony');
+      overlay3.classList.remove("overlay3__animate");
+    }, 700);
+  }
+
+  const heroTwo = () => {
+    const overlay4 = document.querySelector(".overlay4");
+    overlay4.classList.add("overlay4__animate");
+    setTimeout(() => {
+      router.push('/testimony');
+      overlay4.classList.remove("overlay4__animate");
+    }, 700);
+  }
+
+  const heroThree = () => {
+    const overlay5 = document.querySelector(".overlay5");
+    overlay5.classList.add("overlay5__animate");
+    setTimeout(() => {
+      router.push('/testimony');
+      overlay5.classList.remove("overlay5__animate");
+    }, 700);
+  }
+
   return (
     <div>
       <Header title="The Sound Therapist" />
@@ -9,8 +46,12 @@ export default function Home() {
       <div className="overlay"></div>
       <div className="overlay2"></div>
 
+      <div className="overlay3"></div>
+      <div className="overlay4"></div>
+      <div className="overlay5"></div>
+
       <div className="hero">
-        <div className="hero__layout hero--one">
+        <div className="hero__layout hero--one" onClick={heroOne}>
           <div className="hero__container">
             <h4 className="hero__heading hero__heading-1">
               Meditative and relaxing, <br />it will lower your stress levels
@@ -32,7 +73,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hero__layout hero--two">
+        <div className="hero__layout hero--two" onClick={heroTwo}>
           <h4 className="hero__heading hero__heading-2">
             Vibroacoustic massages and group <br />
             soundscapes are also available
@@ -46,7 +87,7 @@ export default function Home() {
             <p className="hero__footer__text">WHAT DO YOU USE?</p>
           </div>
         </div>
-        <div className="hero__layout hero--three">
+        <div className="hero__layout hero--three" onClick={heroThree}>
           <h4 className="hero__heading">
             Sound therapy activates your <br />
             rest and digest response
@@ -65,3 +106,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
